@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Define an asynchronous function that waits for a random delay."""
 
