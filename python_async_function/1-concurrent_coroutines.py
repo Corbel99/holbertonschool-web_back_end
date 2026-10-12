@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Une coroutine qui lance wait_n fois wait_random avec un délai maximum donné
-et retourne la liste des délais par ordre croissant.
+A coroutine that spawns wait_n times wait_random with a given max_delay
+and returns the list of all the delays in ascending order.
 """
 
 import asyncio
@@ -11,15 +11,15 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
-  """Lance wait_random n fois avec max_delay
+    """Spawn wait_random n times with the specified max_delay
 
-  et retourne la liste de tous les délais par ordre croissant.
-  """
-  tasks = [wait_random(max_delay) for _ in range(n)]
-  results = []
+    and return the list of all the delays (float values) in ascending order.
+    """
+    tasks = [wait_random(max_delay) for _ in range(n)]
+    results = []
 
-  for task in asyncio.as_completed(tasks):
-    delay = await task
-    results.append(delay)
+    for task in asyncio.as_completed(tasks):
+        delay = await task
+        results.append(delay)
 
-  return results
+    return results
