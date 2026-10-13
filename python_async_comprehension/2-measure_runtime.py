@@ -1,4 +1,4 @@
-#!/usr/init/env python3
+#!/usr/bin/env python3
 """Measure the runtime of async_comprehension executed four times in parallel."""
 
 import asyncio
